@@ -273,7 +273,6 @@ divtag2.addEventListener("click", function(event){
 
   if(element.matches("button")===true && element.getAttribute('name') === "goback")
   {
-    alert("helooooo goback");
     window.location.reload();
 
     if(JSON.parse(localStorage.getItem("index"+ 1)) === null)
@@ -293,6 +292,7 @@ divtag2.addEventListener("click", function(event){
     if(JSON.parse(localStorage.getItem("index"+ 1)) === null )
     {
        var line= document.createElement("hr");
+       line.style = "margin-top: 20px;"
        divtag2.appendChild(line); 
        var msg= document.createElement("h3");
        msg.textContent="No High score Data, Please click the link on up corner (the view High Score) to refresh the page";
