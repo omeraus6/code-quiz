@@ -19,6 +19,11 @@ N/A
 when open the webpage, there is a Botton called "starting Quiz" , when click it will show the time moving and the first question with muliple choice and at the end will show the score and the submit button to save it in local storage.
 picture shows the code and the website running.
 
+https://omeraus6.github.io/code-quiz/
+deploy link
+
+https://github.com/omeraus6/code-quiz
+github link
 
 
 
