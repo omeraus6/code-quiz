@@ -140,9 +140,7 @@ function removeoldquestion()
 function createques()
 {
    
-   document.querySelector(".middleside").style = "text-align: left;";
-   
-
+    document.querySelector(".middleside").style = "text-align: left;";
     newh1.textContent = question[count];
     newh1.style = "font-size: 30px; font-weight: bold;";
     divtag.appendChild(newh1);
@@ -177,7 +175,6 @@ function finalscore()
   var line= document.createElement("hr");
   alldone.textContent = "All done!";
 
-   
 
    if(secondsLeft != 0)
    {
@@ -285,7 +282,7 @@ function setTime2() {
 hscore.addEventListener("click",function(){
   document.querySelector(".middleside").style = "text-align: left;";
   highscorepage();
-  
+
   var line= document.createElement("hr");
   line.style = "margin-top: 20px;"
   divtag2.appendChild(line); 
@@ -312,7 +309,6 @@ divtag2.addEventListener("click", function(event){
       result.textContent="No High score Data";
       result.style="font-size: 20px; font-style: italic";
       divtag2.appendChild(result);
-  
     } 
   }
   else if(element.matches("button")===true && element.getAttribute('name') === "clearbn")
