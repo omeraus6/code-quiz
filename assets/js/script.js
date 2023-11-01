@@ -286,6 +286,14 @@ hscore.addEventListener("click",function(){
   document.querySelector(".middleside").style = "text-align: left;";
   highscorepage();
   
+  var line= document.createElement("hr");
+  line.style = "margin-top: 20px;"
+  divtag2.appendChild(line); 
+  var msg= document.createElement("h3");
+  msg.textContent="No High score Record";
+  msg.style="font-size: 20px; font-style: italic";
+  divtag2.appendChild(msg);
+  
 });
 
 
@@ -313,25 +321,14 @@ divtag2.addEventListener("click", function(event){
     index=1;
     if(JSON.parse(localStorage.getItem("index"+ 1)) === null )
     {
+       highscorepage();
        var line= document.createElement("hr");
        line.style = "margin-top: 20px;"
        divtag2.appendChild(line); 
        var msg= document.createElement("h3");
-       msg.textContent="No High score Data, Please click the link on up corner (the view High Score) to refresh the page";
+       msg.textContent="No High score Record";
        msg.style="font-size: 20px; font-style: italic";
        divtag2.appendChild(msg);
     }
   }
-
 });
-
-
-
-
-
-  
-
-
-
-
-
