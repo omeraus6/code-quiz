@@ -197,6 +197,9 @@ function finalscore()
   textinit.style = "font-size: 20px; margin-right: 30px";
   submitb.style = "width: 100px; height: 40px; padding: 0;";
   line.style ="border-bottom: 1px solid black; margin-top: 20px";
+
+  initial.setAttribute("for","initial");
+  textinit.setAttribute("id","initial");
   divtag.appendChild(alldone);
   divtag.appendChild(finalresult);
   divtag.appendChild(initial);
@@ -208,7 +211,6 @@ function finalscore()
 
 //submit the score and save it in localstorage
 submitb.addEventListener("click", function(){
-  textinit.value = "";
   highscorepage();
 });
 
@@ -221,25 +223,21 @@ function highscorepage()
   {
      index++;
   }
-  
-  if(textinit.value != "" && textinit.value.length == 2)
+
+
+  if(textinit.value.length == 2 && textinit.value != "")
   {
     storedata = index +". "+ textinit.value + " - " + score;
     localStorage.setItem("index"+ index,JSON.stringify(storedata));
-    alert(textinit.value.length);
-    textinit.value = "";
+    textinit.value="";
   }
-  else if(textinit.value.length !=2 && textinit.value != "")
+  else if(textinit.value.length > 1 && textinit.value != "")
   {
     alert("please insert two characters for initial name");
-    //highscorepage();
-    //index--;
+    textinit.value = "";
+    return;
     
     
-  }
-  else if(textinit.value == "")
-  {
-    alert("is empty");
   }
   
 
@@ -326,7 +324,6 @@ divtag2.addEventListener("click", function(event){
   }
 
 });
-
 
 
 
