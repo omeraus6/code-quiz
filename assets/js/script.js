@@ -82,8 +82,9 @@ function setTime() {
      timeEl.textContent = secondsLeft;
  
      if(secondsLeft == 0) {
-
-        clearInterval(timerInterval);
+      finalscore();
+      clearInterval(timerInterval);
+        
      }
  
    }, 1000);
@@ -161,6 +162,7 @@ function createques()
     var line= document.createElement("hr");
     line.style ="border-bottom: 1px solid black; margin-top: 20px;";
     divtag.appendChild(line);
+
   
 }
 
@@ -175,11 +177,19 @@ function finalscore()
   var line= document.createElement("hr");
   alldone.textContent = "All done!";
 
-  score=secondsLeft;
-  finalresult.textContent = "Your final score is " + score;
- 
-  secondsLeft=1; 
-  
+   
+
+   if(secondsLeft != 0)
+   {
+      score=secondsLeft;
+      finalresult.textContent = "Your final score is " + score;
+      secondsLeft=1;
+   }
+   else
+   {
+      finalresult.textContent = "Your final score is " + score; 
+   }
+
   initial.textContent="Enter initials:";
   submitb.textContent="Submit";
 
@@ -198,6 +208,7 @@ function finalscore()
 
 //submit the score and save it in localstorage
 submitb.addEventListener("click", function(){
+  textinit.value = "";
   highscorepage();
 });
 
@@ -211,11 +222,24 @@ function highscorepage()
      index++;
   }
   
-  if(textinit.value != "")
+  if(textinit.value != "" && textinit.value.length == 2)
   {
     storedata = index +". "+ textinit.value + " - " + score;
     localStorage.setItem("index"+ index,JSON.stringify(storedata));
-    textinit.value="";
+    alert(textinit.value.length);
+    textinit.value = "";
+  }
+  else if(textinit.value.length !=2 && textinit.value != "")
+  {
+    alert("please insert two characters for initial name");
+    //highscorepage();
+    //index--;
+    
+    
+  }
+  else if(textinit.value == "")
+  {
+    alert("is empty");
   }
   
 
